@@ -1,0 +1,49 @@
+/*COLORS & FONT
+  font-family: 'Berkshire Swash', cursive; (titre)
+  font-family: 'Oldenburg', cursive;
+  font-family: 'Playball', cursive; (secondary tittres)
+  #AC841C (color font nav)
+  #F4F682 (color line)
+  #E1BF65 (color footer gradient)
+  #C8AE6B (color box sign in)
+  #EDD9A3 (color button)
+  #E1BF65 (color border button)
+  #F4F682 (color button search)
+*/
+
+/*NavBar*/
+.navbar-nav .nav-link {
+    font-family: 'Oldenburg', cursive;
+    color: #AC841C;
+}
+.dropdown-item{
+  font-family: 'Oldenburg', cursive;
+    color: #AC841C;
+}
+/*Footer*/
+.page-footer {
+  font-family: 'Oldenburg', cursive;
+  background: #ffe259;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #E1BF65, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #E1BF65, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/*Index*/
+.img-index{
+  position: relative;
+  width: 100%;
+  height: 456px;
+  left: 0px;
+}
+
+.titre-ppal{
+  font-family: 'Berkshire Swash', cursive;
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  color: whitesmoke;
+  font-size: 500%;
+}
