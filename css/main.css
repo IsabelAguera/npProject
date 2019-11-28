@@ -24,18 +24,16 @@
 .page-footer {
   font-family: 'Oldenburg', cursive;
   background: #ffe259;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #E1BF65, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #E1BF65, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  background: -webkit-linear-gradient(to bottom, #E1BF65, #fffc59);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #E1BF65, #ffee59); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: x-small;
 }
 
 /*Index*/
 .img-index{
   position: relative;
   width: 100%;
-  height: 456px;
+  height: 350px;
   left: 0px;
 }
 
@@ -46,4 +44,39 @@
   left: 40%;
   color: whitesmoke;
   font-size: 500%;
+}
+.icon{
+  color: #AC841C;
+}
+.small_titre{
+  color: black;
+  font-family: 'Playball', cursive;
+  font-size: 20px;
+
+}
+/*Hotel page*/
+.img-hotel{
+  position: relative;
+  width: 100%;
+  height: 300px;
+  left: 0px;
+}
+.search{
+  font-family: 'Oldenburg', cursive;
+  background-color: #E1BF65;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 2%;
+  
+  
+}
+.title2{
+  font-family: 'Berkshire Swash', cursive;
+  margin-left: 20%;
+  font-size: 30px;
+}
+#search_hotel{
+  background-color: #F4F682;
+  border-color: #E1BF65;
+  border-radius: 10%;
 }

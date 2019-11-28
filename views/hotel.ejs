@@ -12,8 +12,56 @@
     
     <!--Include NavBar-->
     <%- include ('partials/navigation.ejs'); -%>
-
-
+    <div class="main">
+        <img class="img-hotel" src="img/globos.jpg">
+    </div>
+    <p class="title2">Do you need a hotel?</p>
+    <div class="search d-flex d-column justify-content-center mt-4 mb-5">
+           
+        <div class="part1 d-row mr-5 pt-1 pb-3">
+                
+            <div class="where">
+                <form action="" method="GET">
+                    Where:<br>
+                <input type="text" name="where"><br>
+                </form>
+            </div>
+            <div class="people">
+                    <div class="checkin">
+                <form action="" method="GET">
+                    Checkin:<br>
+                <input type="date" name="check-in"><br>
+                </form>
+            </div>
+               
+            </div>
+        </div>
+        <div class="part2 d-row pb-3 pt-1">
+                <form action="" method="GET">
+                        <label for="people">People
+                        </label><br>
+                    <select name="people" id="people">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    </form>
+            <div class="checkout">
+                <form action="" method="GET">
+                    Checkout:<br>
+                <input type="date" name="check-out"><br>
+                </form>
+            </div>
+        </div>
+        <div class="part3 d-row ml-5 pt-5">
+            <input type="submit" value="Search"l id="search_hotel">
+        </div>
+        
+    </div>
     
 </body>
     <!--Include Footer-->
