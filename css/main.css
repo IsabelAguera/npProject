@@ -80,3 +80,16 @@
   border-color: #E1BF65;
   border-radius: 10%;
 }
+
+/*Sign in*/
+body.signin{
+  background-image: url(img/transp.png);
+  background-repeat: inherit;
+}
+
+.box{
+  background-color: #C8AE6B;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10%;
+}
