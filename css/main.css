@@ -78,7 +78,7 @@
 #search_hotel{
   background-color: #F4F682;
   border-color: #E1BF65;
-  border-radius: 10%;
+  border-radius: 12%;
 }
 
 /*Sign in*/
@@ -92,4 +92,11 @@ body.signin{
   margin-left: 30%;
   margin-right: 30%;
   margin-top: 10%;
+  padding: 6%;
+  border-radius: 2%;
+  font-family: 'Oldenburg', cursive;
+}
+h3{
+  font-family: 'Playball', cursive;
+  font-size: 35px;
 }

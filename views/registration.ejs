@@ -28,20 +28,19 @@
               <div class="col-md">
               </div>
               <div class="col-md col-sm-12 col-xs-12 box">
-          
-          <div id="main">
-                <h3>Sign in</h3>
-                <form action="" method="POST">
-                        
-                        <input class="input" type="text" placeholder="Username" name="username"><br></br>
-                        <input class="input" type="password" placeholder="Password" name="password1" id="password"><br></br>
-                        
-                        <br>
-          
-                        <input id="search_hotel" type="submit" name="submit" value="Go!">
-                    </form>
-                <p>Not an account yet ? <a href="/signup">Sign up</a> </p>
-            </div>
+                    <div id="main">
+                            <h3>Sign up</h3>
+                            <form action="" method="POST">
+                                    <input class="input" type="email" placeholder="E-mail" name="email"><br></br>
+                                    <input class="input" type="text" placeholder="Username" name="username"><br></br>
+                                    <input class="input" type="password" placeholder="Password" name="password1" id="password" onkeyup="check()"><br></br>
+                                    <input class="input" type="password" placeholder="Confirm password" name="password2" id="confirm_password" onkeyup="check()"></br>
+                                    <br>
+                      
+                                    <input id="search_hotel" type="submit" name="submit" value="Go!">
+                                </form>
+                            <p>Already an account ? <a href="">Sign in</a> </p>
+                        </div>
               </div>
               <div class="col-md">
               </div>
