@@ -3,10 +3,12 @@ const app =express();
 const path = require ('path'); // to concatenate
 const methodOverride = require('method-override');
 const session = require('express-session');
+const router = express.Router();
+const trip = require('./users'); // llamo 
 
 //settings
 app.set('port', 3000); 
-app.set('views', path.join(__dirname, 'views')); 
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); //allows to process html pages
 
 //middlewares
@@ -17,6 +19,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+app.use('/user', trip)
 
 
 //routes
@@ -37,6 +40,12 @@ app.get('/events', (req, res) => {
 });
 app.get('/user', (req, res) => {
     res.render('users.ejs');
+});
+app.get('/registration', (req, res) => {
+    res.render('registration.ejs');
+});
+app.get('/alltrip', (req, res) => {
+    res.render('alltrip.ejs');
 });
 
 //static files
