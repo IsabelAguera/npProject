@@ -5,11 +5,14 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const router = express.Router();
 const trip = require('./users'); // llamo 
+require('./database');
+
 
 //settings
 app.set('port', 3000); 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); //allows to process html pages
+app.set('models', path.join(__dirname, 'models'));
 
 //middlewares
 app.use(express.urlencoded({extended: false})); //to get user's information
