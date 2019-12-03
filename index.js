@@ -1,37 +1,47 @@
 const express = require('express');
-const app =express(); 
 const path = require ('path'); // to concatenate
 const methodOverride = require('method-override');
 const session = require('express-session');
-const router = express.Router();
+const passport = require('passport');
 const trip = require('./users'); // llamo 
+const flash = require('connect-flash');
+
+//Initializations
+const app = express(); 
+require('./passport/local-auth');
 require('./database');
 
 
 //settings
-app.set('port', 3000); 
+app.set('port', process.env.PORT || 3000); 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); //allows to process html pages
 app.set('models', path.join(__dirname, 'models'));
+app.set('passport', path.join(__dirname, 'passport'));
 
 //middlewares
 app.use(express.urlencoded({extended: false})); //to get user's information
-app.use(methodOverride('_method')); // to send an other kinds of date 
+app.use(methodOverride('_method')); // to send an other kinds of data 
 app.use(session({
     secret: 'mysecretapp',
     resave: true,
     saveUninitialized: true
 }));
+app.use(flash());
+
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/user', trip)
+
 
 
 //routes
 app.get('/', (req, res)=> {
     res.render('index.ejs');
 });
-app.get('/signin', (req, res) => {
+/*app.get('/signin', (req, res) => {
     res.render('signIn.ejs');
-});
+});*/
 app.get('/flight', (req, res) => {
     res.render('flight.ejs');
 });
@@ -44,16 +54,17 @@ app.get('/events', (req, res) => {
 app.get('/user', (req, res) => {
     res.render('users.ejs');
 });
-app.get('/registration', (req, res) => {
+/*app.get('/registration', (req, res) => {
     res.render('registration.ejs');
-});
+});*/
 app.get('/alltrip', (req, res) => {
     res.render('alltrip.ejs');
 });
 
+
 //static files
 
-app.use(express.static(path.join(__dirname, 'css')));
+app.use('/css', express.static(path.join(__dirname, 'css')));
 
 
 //listening the server
