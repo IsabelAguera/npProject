@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/IsabelAguera/npProject#readme",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "ejs": "^3.0.1",

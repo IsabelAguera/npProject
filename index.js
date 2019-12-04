@@ -8,7 +8,6 @@ const flash = require('connect-flash');
 
 //Initializations
 const app = express(); 
-require('./passport/local-auth');
 require('./database');
 
 
@@ -20,6 +19,8 @@ app.set('models', path.join(__dirname, 'models'));
 app.set('passport', path.join(__dirname, 'passport'));
 
 //middlewares
+
+
 app.use(express.urlencoded({extended: false})); //to get user's information
 app.use(methodOverride('_method')); // to send an other kinds of data 
 app.use(session({
@@ -27,13 +28,9 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
 app.use(flash());
-
-app.use(passport.initialize());
-app.use(passport.session());
 app.use('/user', trip)
-
-
 
 //routes
 app.get('/', (req, res)=> {
