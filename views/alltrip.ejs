@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include ('partials/header.ejs'); -%>
+
+    <title>Document</title>
+</head>
+<body>
+        <%- include ('partials/navigation.ejs'); -%>
+        <div class="main">
+                <img class="img-hotel" src="/css/img/alltrip2.jpeg">
+            </div>
+            <p class="title2">Choose when and where and we'll do the rest</p>
+            <div class="search d-flex d-column justify-content-center mt-4 mb-5">
+                   
+                <div class="part1 d-row mr-5 pt-1 pb-3">
+                        
+                    <div class="where">
+                        <form action="" method="GET">
+                            Where:<br>
+                        <input type="text" name="where"><br>
+                        </form>
+                    </div>
+                    <div class="people">
+                            <div class="checkin">
+                        <form action="" method="GET">
+                            From:<br>
+                        <input type="date" name="check-in"><br>
+                        </form>
+                    </div>
+                       
+                    </div>
+                </div>
+                <div class="part2 d-row pb-3 pt-1">
+                        <form action="" method="GET">
+                                <label for="people">People
+                                </label><br>
+                            <select name="people" id="people">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                            </form>
+                    <div class="checkout">
+                        <form action="" method="GET">
+                            To:<br>
+                        <input type="date" name="check-out"><br>
+                        </form>
+                    </div>
+                </div>
+                <div class="part3 d-row ml-5 pt-5">
+                    <input type="submit" value="Search"l id="search_hotel">
+                </div> 
+            </div>
+</body>
+
+<!--Include Footer-->
+<%- include ('partials/footer.ejs'); -%>
+
+
+</html>

@@ -51,12 +51,13 @@ app.get('/events', (req, res) => {
 app.get('/user', (req, res) => {
     res.render('users.ejs');
 });
-/*app.get('/registration', (req, res) => {
-    res.render('registration.ejs');
-});*/
 app.get('/alltrip', (req, res) => {
     res.render('alltrip.ejs');
 });
+/*app.get('/registration', (req, res) => {
+    res.render('registration.ejs');
+});*/
+
 
 
 //static files
