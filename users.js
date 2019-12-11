@@ -73,7 +73,7 @@ module.exports = router;
 
 // API Skyscanner
 
-var req = unirest("POST", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0");
+/*var req = unirest("POST", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0");
 
 unirest.post("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0")
   .header("X-RapidAPI-Key", "3117629f2emshd7be357a47e8ff9p14f358jsn0da2231b1fa8")
@@ -115,4 +115,4 @@ unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apise
 
     console.log(result.status, result.headers, result.body)
 
-});
+});*/
