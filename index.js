@@ -5,10 +5,18 @@ const session = require('express-session');
 const passport = require('passport');
 const trip = require('./users'); // llamo 
 const flash = require('connect-flash');
+const jtw = require('jsonwebtoken');
+const hdb = require('express-handlebars');
+var hbs = require('nodemailer-express-handlebars');
+
+
 
 //Initializations
 const app = express(); 
 require('./database');
+
+
+
 
 
 //settings
@@ -17,9 +25,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); //allows to process html pages
 app.set('models', path.join(__dirname, 'models'));
 app.set('passport', path.join(__dirname, 'passport'));
+app.set('templates', path.join(__dirname, 'templates'));
 
 //middlewares
-
 
 app.use(express.urlencoded({extended: false})); //to get user's information
 app.use(methodOverride('_method')); // to send an other kinds of data 
@@ -36,9 +44,6 @@ app.use('/user', trip)
 app.get('/', (req, res)=> {
     res.render('index.ejs');
 });
-/*app.get('/signin', (req, res) => {
-    res.render('signIn.ejs');
-});*/
 app.get('/flight', (req, res) => {
     res.render('flight.ejs');
 });
@@ -54,10 +59,6 @@ app.get('/user', (req, res) => {
 app.get('/alltrip', (req, res) => {
     res.render('alltrip.ejs');
 });
-/*app.get('/registration', (req, res) => {
-    res.render('registration.ejs');
-});*/
-
 
 
 //static files
@@ -69,3 +70,7 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 app.listen(app.get('port'), () => {
     console.log('server on port', app.get('port'));
 });
+
+exports.Index = function(req, res) {
+    res.render('/');
+}

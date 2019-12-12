@@ -1,8 +1,30 @@
 {
-  "name": "npproject",
+  "name": "npprojet",
   "version": "1.0.0",
-  "description": "",
-  "main": "/home/isa/Bureau/npProject/src/index.js",
+  "description": "This project is a travel site, where you can search for flights, hotels and events for those dates in the place you want.",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^3.1.0",
+    "bcrypt": "^3.0.7",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.8.0",
+    "morgan": "^1.9.1",
+    "nodemailer": "^6.4.1",
+    "nodemailer-express-handlebars": "^3.1.0",
+    "unirest": "^0.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  },
   "scripts": {
     "start": "nodemon index.js"
   },
@@ -10,30 +32,10 @@
     "type": "git",
     "url": "git+https://github.com/IsabelAguera/npProject.git"
   },
-  "author": "Isabel Aguera",
+  "author": "IsabelAguera",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/IsabelAguera/npProject/issues"
   },
-  "homepage": "https://github.com/IsabelAguera/npProject#readme",
-  "dependencies": {
-    "bcrypt": "^3.0.7",
-    "bcryptjs": "^2.4.3",
-    "connect-flash": "^0.1.1",
-    "ejs": "^3.0.1",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "express-session": "^1.17.0",
-    "express-validator": "^6.3.0",
-    "method-override": "^3.0.0",
-    "mongoose": "^5.7.12",
-    "morgan": "^1.9.1",
-    "nodemailer": "^6.4.1",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "unirest": "^0.6.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.1"
-  }
+  "homepage": "https://github.com/IsabelAguera/npProject#readme"
 }
