@@ -31,6 +31,7 @@
   left: 0;
   right: 0;
   position: absolute;
+  margin-block-end: 0%;
 }
 
 /*Index*/
@@ -103,4 +104,23 @@ body.signin{
 h3{
   font-family: 'Playball', cursive;
   font-size: 35px;
+}
+.account{
+  font-size: small;
+}
+/*Registration*/
+
+.box-regis{
+  background-color: #C8AE6B;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 2%;
+  padding: 6%;
+  border-radius: 2%;
+  font-family: 'Oldenburg', cursive;
+}
+/*Button send*/
+
+#forgotPasswordClickEvt, #resetPasswordClickEvt{
+  border-radius: 10%;
 }

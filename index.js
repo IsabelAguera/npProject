@@ -42,22 +42,22 @@ app.use('/user', trip)
 
 //routes
 app.get('/', (req, res)=> {
-    res.render('index.ejs');
+    res.render('index.ejs', {login: req.session.login});
 });
 app.get('/flight', (req, res) => {
-    res.render('flight.ejs');
+    res.render('flight.ejs', {login: req.session.login});
 });
 app.get('/hotel', (req,res) => {
-    res.render('hotel.ejs');
+    res.render('hotel.ejs', {login: req.session.login});
 });
 app.get('/events', (req, res) => {
-    res.render('events.ejs');
+    res.render('events.ejs', {login: req.session.login});
 });
 app.get('/user', (req, res) => {
     res.render('users.ejs');
 });
 app.get('/alltrip', (req, res) => {
-    res.render('alltrip.ejs');
+    res.render('alltrip.ejs', {login: req.session.login});
 });
 
 

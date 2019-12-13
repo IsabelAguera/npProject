@@ -12,7 +12,11 @@
 
 <body>
     <!--Include NavBar-->
-    <%- include ('partials/navigation.ejs'); -%>
+    <% if (login == true) { %>
+        <%-include ('partials/nav-regist.ejs'); -%>
+      <% } else { %>
+        <%-include ('partials/navigation.ejs'); -%>
+      <% } %>
 
     <div class="main">
         <img class="img-index" src="/css/img/index.jpg">
@@ -22,16 +26,16 @@
     </div>
 <div class="container">
     <div class="ppal d-flex row justify-content-center mt-5 mb-5 text-align-center">
-        <div class="icon mr-5">
-            <i class="fas fa-paper-plane fa-6x"></i></br>
+        <div class="icon mr-5 align-items-center d-flex flex-column">
+            <a style="color: #AC841C;" href="/flight" i class="fas fa-paper-plane fa-6x"></i></a>
             <p class="small_titre">Compare the best flights...</p>
         </div>
-        <div class="icon mr-5 ml-5">
-            <i class="fas fa-hotel fa-6x"></i>
+        <div class="icon mr-5 ml-5 align-items-center d-flex flex-column">
+            <a style="color: #AC841C;" href="/hotel" i class="fas fa-hotel fa-6x" href="/hotel"></i></a>
             <p class="small_titre">Choose the best price/quality...</p>
         </div>
-        <div class="icon ml-5">
-            <i class="far fa-calendar fa-6x"></i>
+        <div class="icon ml-5 align-items-center d-flex flex-column">
+            <a style="color: #AC841C;" href="/events" i class="far fa-calendar fa-6x"></i></a>
             <p class="small_titre">What events are taking place?</p>
         </div>
     </div>

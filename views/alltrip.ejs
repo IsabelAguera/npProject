@@ -9,7 +9,11 @@
     <title>Document</title>
 </head>
 <body>
-        <%- include ('partials/navigation.ejs'); -%>
+    <% if (login == true) { %>
+        <%-include ('partials/nav-regist.ejs'); -%>
+      <% } else { %>
+        <%-include ('partials/navigation.ejs'); -%>
+      <% } %>
         <div class="main">
                 <img class="img-hotel" src="/css/img/alltrip2.jpeg">
             </div>

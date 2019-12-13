@@ -9,7 +9,11 @@
     <title>Document</title>
 </head>
 <body>
-        <%- include ('partials/navigation.ejs'); -%>
+        <% if (login == true) { %>
+            <%-include ('partials/nav-regist.ejs'); -%>
+          <% } else { %>
+            <%-include ('partials/navigation.ejs'); -%>
+          <% } %>
         <div class="main">
                 <h1 class= "title2 d-flex justify-align-center">My profile</h1>
             </div>
@@ -18,14 +22,15 @@
                    
                 <div class="part1 d-row mr-5 pt-1 pb-3">
                         
-                    <div class="name">
-                        <p>
-                            Username:<br><br>
-                    
+                    <div class="box-profile pt-5">
+                    <strong>Username:</strong> <%= username %> 
+                
                     </div>
+                     <br><br>
                     <div class="usermail">
-                            <div class="checkin">
-                            Mail:<br><br>
+                    <div class="checkin">
+                    <strong>Mail:</strong> <%= email %>
+                    <br><br>
                     </div>
                     </div>
                 </div>

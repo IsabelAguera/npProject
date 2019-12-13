@@ -47,17 +47,20 @@ router.get('/signIn', (req, res, next) => {
 router.post('/signIn', function(req, res, next) {
     
 
+
     User.findOne({username: req.body.username}, async function(err, user){
         console.log(user); 
         const match = await bcrypt.compare(req.body.password1, user.password);
         console.log(match);
         if(match) {
             req.session.login = true;
+            req.session.username = req.body.username;
+            req.session.email = req.body.email;
             return res.redirect('/user/profile');
         }else{
             return res.redirect('/user/registration');
         }  
-    })
+    });
 });
 
 
@@ -84,8 +87,10 @@ router.post('/registration', async function(req, res){
 });
 
 router.get('/profile', (req, res, next) => {
+  
     if (req.session.login == true){
-        res.render('profile');
+        
+        res.render('profile', {username: req.session.username, mail: req.session.email, login: req.session.login});
     }else{
         return res.redirect('/user/registration');
     }
@@ -187,6 +192,7 @@ router.post('/resetpassword', (req, res, next)  => {
                 smtpTransport.sendMail(data, function(err) {
                   if (!err) {
                     return res.json({ message: 'Password reset' });
+                    res.redirect('/');
                   } else {
                     return done(err);
                   }
