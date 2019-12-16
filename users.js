@@ -212,51 +212,23 @@ router.post('/resetpassword', (req, res, next)  => {
       });
 });
 
-module.exports = router;
+// API Ticketmaster
 
 
-// API Skyscanner
-
-/*var req = unirest("POST", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0");
-
-unirest.post("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0")
-  .header("X-RapidAPI-Key", "3117629f2emshd7be357a47e8ff9p14f358jsn0da2231b1fa8")
-  .end(function (result) {
-    console.log(result.status, result.headers, result.body);
-  });
-
+router.post('/api/event', function(req, res, next) {
+let lieu = req.body.where;
+let date = req.body.checkin;
+var req = unirest("GET", `https://app.ticketmaster.com/discovery/v2/events?apikey=Kz9xLUwSjybrGGlSeCVuuyoxJDLOPNhf&locale=*&startDateTime=${date}T11:28:00Z&city=${lieu}`);
 req.headers({
-	"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-	"x-rapidapi-key": "3117629f2emshd7be357a47e8ff9p14f358jsn0da2231b1fa8",
-	"content-type": "application/x-www-form-urlencoded"
+	"content-type": "application/json"
 });
-req.form({
-	"inboundDate": "2019-12-15",
-	"cabinClass": "business",
-	"children": "0",
-	"infants": "0",
-	"country": "US",
-	"currency": "USD",
-	"locale": "en-US",
-	"originPlace": "SFO-sky",
-	"destinationPlace": "LHR-sky",
-	"outboundDate": "2019-12-12",
-	"adults": "1"
-});
-
 req.end(function (res) {
-	if (res.error){ 
-        new Error(res.error);
-    }
-
-	console.log(res.headers);
+	if (res.error){
+    new Error(res.error)};
+    req.session.event = JSON.stringify(res.body._embedded);
+}); 
+console.log(req.session.event)
+res.render('choosevent', {objet: req.session.event});
 });
 
-unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/1c55daa2-67b9-46b6-a6cc-7d25c539e6ce?pageIndex=0&pageSize=10")
-.header("X-RapidAPI-Host", "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com")
-.header("X-RapidAPI-Key", "3117629f2emshd7be357a47e8ff9p14f358jsn0da2231b1fa8")
-.end(function (result) {
-
-    console.log(result.status, result.headers, result.body)
-
-});*/
+module.exports = router;

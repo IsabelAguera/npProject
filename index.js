@@ -59,7 +59,9 @@ app.get('/user', (req, res) => {
 app.get('/alltrip', (req, res) => {
     res.render('alltrip.ejs', {login: req.session.login});
 });
-
+app.get('/choosevent', (req, res) => {
+    res.render('choosevent.ejs');
+})
 
 //static files
 
