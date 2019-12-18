@@ -124,3 +124,11 @@ h3{
 #forgotPasswordClickEvt, #resetPasswordClickEvt{
   border-radius: 10%;
 }
+
+/*API*/
+
+.apimag{
+  border-radius: 8%;
+  border-color: #AC841C;
+  border-style: solid;
+}

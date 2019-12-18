@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include ('partials/header.ejs'); -%>
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--Include NavBar-->
+    <% if (login == true) { %>
+        <%-include ('partials/nav-regist.ejs'); -%>
+      <% } else { %>
+        <%-include ('partials/navigation.ejs'); -%>
+      <% } %>
+
+<div class="row">
+    <% if (notes) { %>
+        <% notes.forEach(function (note) { %>
+
+    <div class="col-sm-3">
+      <div class="card mt-1 ml-1" style="width: 18rem;">
+        <div class="card-body">
+            
+          <h4 class="card-title d-flex justify-content-between align-items-center">
+            <%= note.title %> <a href="/notes/edit/<%= note._id %>"><i class="fas fa-edit"></i></a>
+          </h4>
+          <p><%= note.description %></p>
+          
+          <form action="/user/notes/delete/<%= note._id %>?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-warning btn-block btn-sm">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+    <% } if (notes == 0) { %>
+    
+    <div class="card mx-auto">
+        
+      <div class="card-body">
+        <h1>Hello <%= username %></h1>
+        <p clsss="lead">There are not Notes yet.</p>
+        <a href="/user/notes/add" class="btn btn-success btn-block">Create One!</a>
+      </div>
+    </div>
+    <% } %>
+
+</div>
+</body>
+
+</html>

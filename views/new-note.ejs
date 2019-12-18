@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include ('partials/header.ejs'); -%>
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--Include NavBar-->
+    <% if (login == true) { %>
+        <%-include ('partials/nav-regist.ejs'); -%>
+      <% } else { %>
+        <%-include ('partials/navigation.ejs'); -%>
+      <% } %>
+
+
+
+<% if (errors) { %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <p>Please complete the title or the description!</p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% } %>
+
+<div class="col-md-4 mx-auto">
+    <div class="card text-center">
+      <div class="card-header">
+        <h3>New Note</h3>
+      </div>
+      <div class="card-body">
+        <form action="/user/new-note" method="POST">
+          <div class="form-group">
+            <input type="text" name="title" class="form-control" placeholder="Title" autofocus/>
+          </div>
+          <div class="form-group">
+            <textarea name="description" class="form-control" placeholder="Description"></textarea>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

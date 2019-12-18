@@ -18,7 +18,6 @@ require('./database');
 
 
 
-
 //settings
 app.set('port', process.env.PORT || 3000); 
 app.set('views', path.join(__dirname, 'views'));
@@ -40,6 +39,15 @@ app.use(session({
 app.use(flash());
 app.use('/user', trip)
 
+//Globales
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
+    next();
+  });
+
 //routes
 app.get('/', (req, res)=> {
     res.render('index.ejs', {login: req.session.login});
@@ -60,8 +68,14 @@ app.get('/alltrip', (req, res) => {
     res.render('alltrip.ejs', {login: req.session.login});
 });
 app.get('/choosevent', (req, res) => {
-    res.render('choosevent.ejs');
-})
+    res.render('choosevent.ejs', {login: req.session.login});
+});
+app.get('/note-edit', (req, res) => {
+    res.render('note-edit.ejs', {login: req.session.login});
+});
+
+
+
 
 //static files
 

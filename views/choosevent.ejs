@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,47 @@
 
     <title>Document</title>
 </head>
-<body>
-    
-    <!--Include NavBar-->
-    <%-include ('partials/nav-regist.ejs'); -%>
-    
-    <div class="main">
 
-        <% objet.forEach(function (item) { %>
-        <%= item.name %>
-        <% }) %>
-           
+<body>
+
+    <!--Include NavBar-->
+    <% if (login == true) { %>
+        <%-include ('partials/nav-regist.ejs'); -%>
+      <% } else { %>
+        <%-include ('partials/navigation.ejs'); -%>
+      <% } %>
+
+    <div class="container">
+       
+        <div class="row sm-12">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+                <div class="col-sm-12">
+                    <% objet.forEach(function (item) { %>
+                    </br><a href="<%= item.url %>"><img class="apimag" src="<%= item.images[0].url %>" width="100%" height="80%"></a></br>
+                </div>
+                <div class="col-sm-12">
+    
+                    </br><%= item.name %></br>
+    
+                </div>
+                <div class="col-sm-12">
+    
+                    </br><%= item.dates.start.localTime %></br>
+                    <% }) %>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+
+            </div>
+
+            
+        
         </div>
+    </div>
+
 </body>
 
-    <!--Include Footer-->
-    <%- include ('partials/footer.ejs'); -%>
 </html>
