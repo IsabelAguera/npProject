@@ -16,6 +16,7 @@
       <% } else { %>
         <%-include ('partials/navigation.ejs'); -%>
       <% } %>
+ 
 
 <div class="row">
     <% if (notes) { %>
@@ -26,7 +27,7 @@
         <div class="card-body">
             
           <h4 class="card-title d-flex justify-content-between align-items-center">
-            <%= note.title %> <a href="/notes/edit/<%= note._id %>"><i class="fas fa-edit"></i></a>
+            <%= note.title %> <a href="/user/notes/edit/<%= note._id %>"><i class="fas fa-edit"></i></a>
           </h4>
           <p><%= note.description %></p>
           

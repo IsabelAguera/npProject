@@ -2,9 +2,9 @@ const express = require('express');
 const path = require ('path'); // to concatenate
 const methodOverride = require('method-override');
 const session = require('express-session');
+const flash = require('connect-flash');
 const passport = require('passport');
 const trip = require('./users'); // llamo 
-const flash = require('connect-flash');
 const jtw = require('jsonwebtoken');
 const hdb = require('express-handlebars');
 var hbs = require('nodemailer-express-handlebars');
@@ -16,15 +16,13 @@ const app = express();
 require('./database');
 
 
-
-
 //settings
 app.set('port', process.env.PORT || 3000); 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); //allows to process html pages
 app.set('models', path.join(__dirname, 'models'));
-app.set('passport', path.join(__dirname, 'passport'));
 app.set('templates', path.join(__dirname, 'templates'));
+app.set('partials', path.join(__dirname, 'partials'));
 
 //middlewares
 
@@ -73,8 +71,6 @@ app.get('/choosevent', (req, res) => {
 app.get('/note-edit', (req, res) => {
     res.render('note-edit.ejs', {login: req.session.login});
 });
-
-
 
 
 //static files

@@ -248,6 +248,8 @@ router.post('/api/event', function(req, res){
 
 // Notes
 
+//To create a note
+
 const Note= require('./models/Note');
 
 router.get('/notes/add', (req, res) => {
@@ -273,17 +275,21 @@ router.post('/new-note', async(req, res) => {
   } else {
 
   const NewNote = new Note({title, description});
-    await NewNote.save();
+    const success = await NewNote.save();
     res.redirect('/user/notes');
   }
 
 });
+
+//To show all notes
 
 router.get('/notes', async(req, res) => {
   const notes = await Note.find().sort({date: 'desc'});
   console.log(notes);
   res.render('all-notes', { notes: notes, login: req.session.login, username: req.session.username});
 });
+
+//To edit a note
 
 router.get('/notes/edit/:id', async (req, res) => {
   const notedit = await Note.findById(req.params.id);
@@ -294,12 +300,14 @@ router.get('/notes/edit/:id', async (req, res) => {
 router.put('/notes/edit/:id', async(req, res) => {
   const {title, description} = req.body;
   await Note.findByIdAndUpdate(req.params.id, {title, description});
-  res.redirect('/notes');
+  res.redirect('/user/notes');
 });
 
-router.delete('/notes/delete/:id', (req, res) => {
-  console.log(req.params.id);
-  res.send('ok');
+//To delete a note
+
+router.delete('/notes/delete/:id', async(req, res) => {
+await Note.findByIdAndDelete(req.params.id)
+  res.redirect('/user/notes');
 });
 
 module.exports = router;
