@@ -206,7 +206,6 @@ router.post('/resetpassword', (req, res, next)  => {
     
                 smtpTransport.sendMail(data, function(err) {
                   if (!err) {
-                    return res.json({ message: 'Password reset' });
                     res.redirect('/');
                   } else {
                     return done(err);
