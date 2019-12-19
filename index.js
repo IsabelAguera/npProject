@@ -21,6 +21,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); //allows to process html pages
 app.set('models', path.join(__dirname, 'models'));
+app.set('passport', path.join(__dirname, 'passport'));
 app.set('templates', path.join(__dirname, 'templates'));
 app.set('partials', path.join(__dirname, 'partials'));
 
