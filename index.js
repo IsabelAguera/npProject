@@ -3,7 +3,6 @@ const path = require ('path'); // to concatenate
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
-const passport = require('passport');
 const trip = require('./users'); // llamo 
 const jtw = require('jsonwebtoken');
 const hdb = require('express-handlebars');
