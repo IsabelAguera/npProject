@@ -4,9 +4,9 @@ This project is a travel site made in 4 weeks, where you can search for flights,
 
 **What does it look like?** [Démo](https://IsabelAguera.github.io/npProject/)
 
-<img src="./img/index.png" style="width:30%;">
-<img src="./img/signin.png" style="width:30%;">
-<img src="./img/hotel.png" style="width:30%;">
+<img src="css/img/index.png" style="width:30%;">
+<img src="css/img/signin.png" style="width:30%;">
+<img src="css/img/hotel.png" style="width:30%;">
 
 
 ## Built with
