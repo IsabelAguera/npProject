@@ -11,6 +11,8 @@ var hbs = require('nodemailer-express-handlebars');
 
 
 //Initializations
+const dotenv = require('dotenv').config();
+git 
 const app = express(); 
 require('./database');
 

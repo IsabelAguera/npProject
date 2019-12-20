@@ -12,7 +12,6 @@ const flash = require('connect-flash');
 
 
 const User = require('./models/user');
-const dotenv = require('dotenv').config();
 
 
 // Forgot password 
