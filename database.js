@@ -2,7 +2,7 @@ const mongoose = require ('mongoose');
 const { mongodb } = require('./keys')
 
 const dotenv = require('dotenv').config();
-
+console.log(process.env.MONGODB_USERNAME);
 mongoose.connect(mongodb.URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
