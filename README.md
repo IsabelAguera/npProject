@@ -1,6 +1,6 @@
 # Click&Trip
 
-This project is a travel site made in 4 weeks, where you can search for flights, hotels and events for those dates in the place you want. You can choose separetly or all trip together, and if you sign up, you can acces the notes section and create your own notes to organize your trip.
+This project is a travel site made in 4 weeks, where you can search for flights, hotels and events (I used ticketmaster API) for those dates in the place you want. You can choose separetly or all trip together, and if you sign up, you can acces the notes section and create your own notes to organize your trip.
 
 **What does it look like?** [Démo](https://IsabelAguera.github.io/npProject/)
 

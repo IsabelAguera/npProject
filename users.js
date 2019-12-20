@@ -256,7 +256,7 @@ router.get('/notes/add', (req, res) => {
 });
 
 router.post('/new-note', async(req, res) => {
-  const { title, description }=req.body;
+  const { title, description}=req.body;
   const errors = []; 
   if (!title) {
     errors.push({text: 'Please write a title'});
@@ -272,9 +272,11 @@ router.post('/new-note', async(req, res) => {
       description
     });
   } else {
-
-  const NewNote = new Note({title, description});
-    const success = await NewNote.save();
+  const user = req.session.username;
+  const NewNote = new Note({title, description, user});
+    
+    await NewNote.save();
+    console.log(NewNote);
     res.redirect('/user/notes');
   }
 
@@ -283,7 +285,7 @@ router.post('/new-note', async(req, res) => {
 //To show all notes
 
 router.get('/notes', async(req, res) => {
-  const notes = await Note.find().sort({date: 'desc'});
+  const notes = await Note.find({user: req.session.username}).sort({date: 'desc'});
   console.log(notes);
   res.render('all-notes', { notes: notes, login: req.session.login, username: req.session.username});
 });
