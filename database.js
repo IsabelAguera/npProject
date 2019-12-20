@@ -1,6 +1,7 @@
 const mongoose = require ('mongoose');
 const { mongodb } = require('./keys')
 
+const dotenv = require('dotenv').config();
 
 mongoose.connect(mongodb.URI, {
     useNewUrlParser: true,
