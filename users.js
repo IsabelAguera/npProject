@@ -10,7 +10,7 @@ const crypto = require('crypto');
 const flash = require('connect-flash');
 
 
-
+const dotenv = require('dotenv').config();
 const User = require('./models/user');
 
 
