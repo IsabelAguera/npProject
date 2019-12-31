@@ -20,6 +20,8 @@
             <img class="img-hotel" src="/css/img/cielo.webp">
         </div>
         <p class="title2">Where do you want to go?</p>
+
+        <!--
         <div class="search d-flex d-column justify-content-center mt-4 mb-5">
                
             <div class="part1 d-row mr-5 pt-1 pb-3">
@@ -27,16 +29,16 @@
                 <div class="where">
                     <form action="" method="GET">
                         From:<br>
-                    <input type="text" name="from"><br>
+                    <input type="text" name="from" width="20%"><br>
                     </form>
                 </div>
                 <div class="people">
                         <div class="checkin">
                     <form action="" method="GET">
                         Depart:<br>
-                    <input type="date" name="check-in"><br>
+                    <input type="date" name="check-in" width="20%"><br>
                     </form>
-                </div>
+                        </div>
                    
                 </div>
             </div>
@@ -44,22 +46,65 @@
                     <div class="where">
                     <form action="" method="GET">
                         To:<br>
-                    <input type="text" name="to"><br>
+                    <input type="text" name="to" width="20%"><br>
                     </form>
                     </div>
                     
                 <div class="checkout">
                     <form action="" method="GET">
                         Return:<br>
-                    <input type="date" name="check-out"><br>
+                    <input type="date" name="check-out" width="20%"><br>
                     </form>
                 </div>
             </div>
             <div class="part3 d-row ml-5 pt-5">
-                <input type="submit" value="Search"l id="search_hotel">
+                <input type="submit" value="Search"l id="search_hotel" width="20%">
             </div>
             
         </div>
+        -->
+
+        <!--prueba-->
+
+        <div class="search d-flex d-column justify-content-center mt-4 mb-5">
+            <form action="">
+              <div class="row d-row mr-5 pt-1 pb-3">
+                <div class="col-25 where">
+                  <label for="fname">From</label>
+                </div>
+                <div class="col-75 people">
+                  <input type="text" id="fname" name="firstname" placeholder="Madrid">
+                </div>
+              </div>
+              <div class="row d-row mr-5 pt-1 pb-3">
+                <div class="col-25 where">
+                  <label for="lname">To</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="lname" name="lastname" placeholder="Brussels">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25 checkout">
+                  <label for="country">Go:</label>
+                </div>
+                <div class="col-75">
+                  <input type="date" name="check-in" width="20%"></input>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="subject">Return:  </label>
+                </div>
+                <div class="col-75">
+                 <input type="date" name="check-out" width="20%"></input>
+                </div>
+              </div>
+              <div class="row">
+                <input type="submit" value="Search" id="search_hotel">
+              </div>
+            </form>
+          </div>
 </body>
 
     <!--Include Footer-->

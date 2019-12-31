@@ -10,15 +10,24 @@
   #E1BF65 (color border button)
   #F4F682 (color button search)
 */
-
+@media (min-width: 0px) and (max-width: 480px){
 /*NavBar*/
 .navbar-nav .nav-link {
     font-family: 'Oldenburg', cursive;
     color: #AC841C;
 }
+.navbar-toggler-icon{
+  background-color: #E1BF65;
+}
 .dropdown-item{
   font-family: 'Oldenburg', cursive;
     color: #AC841C;
+}
+.navbar-default .navbar-toggle {
+  border-color:  #AC841C;
+}
+.navbar-toggle{
+  color: #AC841C;
 }
 /*Footer*/
 .page-footer {
@@ -27,11 +36,10 @@
   background: -webkit-linear-gradient(to bottom, #E1BF65, #fffc59);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #E1BF65, #ffee59); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-size: x-small;
-  bottom: 0;
   left: 0;
   right: 0;
-  position: absolute;
   margin-block-end: 0%;
+  bottom: 0%;
 }
 
 /*Index*/
@@ -44,11 +52,11 @@
 
 .titre-ppal{
   font-family: 'Berkshire Swash', cursive;
-  position: absolute;
+  position: fixed;
   top: 35%;
   left: 40%;
   color: whitesmoke;
-  font-size: 500%;
+  font-size: 200%;
 }
 .icon{
   color: #AC841C;
@@ -69,11 +77,16 @@
 .search{
   font-family: 'Oldenburg', cursive;
   background-color: #E1BF65;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 5%;
+  margin-right: 5%;
   border-radius: 2%;
+  display: flex;
+  padding: 20px;
   
-  
+}
+.col-25, .col-75, input[type=submit] {
+  width: 100%;
+  margin-top: 0;
 }
 .title2{
   font-family: 'Berkshire Swash', cursive;
@@ -119,6 +132,10 @@ h3{
   border-radius: 2%;
   font-family: 'Oldenburg', cursive;
 }
+
+.input{
+  width: 100%;
+}
 /*Button send*/
 
 #forgotPasswordClickEvt, #resetPasswordClickEvt{
@@ -132,3 +149,175 @@ h3{
   border-color: #AC841C;
   border-style: solid;
 }
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+* {
+  box-sizing: border-box;
+}
+}
+
+@media (min-width: 480px) and (max-width: 3000px)
+{
+  /*NavBar*/
+  .navbar-nav .nav-link {
+      font-family: 'Oldenburg', cursive;
+      color: #AC841C;
+  }
+  .dropdown-item{
+    font-family: 'Oldenburg', cursive;
+      color: #AC841C;
+  }
+  .navbar-default .navbar-toggle {
+    border-color:  #AC841C;
+  }
+  .navbar-toggle{
+    color: #AC841C;
+  }
+  /*Footer*/
+  .page-footer {
+    font-family: 'Oldenburg', cursive;
+    background: #ffe259;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #E1BF65, #fffc59);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #E1BF65, #ffee59); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: x-small;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-block-end: 0%;
+  }
+  
+  /*Index*/
+  .img-index{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    left: 0px;
+  }
+  
+  .titre-ppal{
+    font-family: 'Berkshire Swash', cursive;
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    color: whitesmoke;
+    font-size: 500%;
+  }
+  .icon{
+    color: #AC841C;
+  }
+  .small_titre{
+    color: black;
+    font-family: 'Playball', cursive;
+    font-size: 20px;
+  
+  }
+  /*Hotel page*/
+  .img-hotel{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    left: 0px;
+  }
+  .search{
+    font-family: 'Oldenburg', cursive;
+    background-color: #E1BF65;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 2%;
+    
+    
+  }
+  .title2{
+    font-family: 'Berkshire Swash', cursive;
+    margin-left: 20%;
+    font-size: 30px;
+  }
+  #search_hotel{
+    background-color: #F4F682;
+    border-color: #E1BF65;
+    border-radius: 12%;
+  }
+  
+  /*Sign in*/
+  body.signin{
+    background-image: url(img/transp.png);
+    background-repeat: inherit;
+  }
+  
+  .box{
+    background-color: #C8AE6B;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10%;
+    padding: 6%;
+    border-radius: 2%;
+    font-family: 'Oldenburg', cursive;
+  }
+  h3{
+    font-family: 'Playball', cursive;
+    font-size: 35px;
+  }
+  .account{
+    font-size: small;
+  }
+  /*Registration*/
+  
+  .box-regis{
+    background-color: #C8AE6B;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 2%;
+    padding: 6%;
+    border-radius: 2%;
+    font-family: 'Oldenburg', cursive;
+  }
+  /*Button send*/
+  
+  #forgotPasswordClickEvt, #resetPasswordClickEvt{
+    border-radius: 10%;
+  }
+  
+  /*API*/
+  
+  .apimag{
+    border-radius: 8%;
+    border-color: #AC841C;
+    border-style: solid;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  }
+
+  
+  

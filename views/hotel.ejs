@@ -20,6 +20,7 @@
         <img class="img-hotel" src="/css/img/globos.jpg">
     </div>
     <p class="title2">Do you need a hotel?</p>
+    <!--
     <div class="search d-flex d-column justify-content-center mt-4 mb-5">
            
         <div class="part1 d-row mr-5 pt-1 pb-3">
@@ -66,7 +67,38 @@
         </div>
         
     </div>
-    
+    -->
+    <div class="search d-flex d-column justify-content-center mt-4 mb-5">
+        <form action="" method="GET">
+          <div class="row d-row mr-5 pt-1 pb-3">
+            <div class="col-25 where">
+              <label for="fname">Where:</label>
+            </div>
+            <div class="col-75 people">
+              <input type="text" id="fname" name="firstname" placeholder="Madrid">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25 checkout">
+              <label for="country">Go:</label>
+            </div>
+            <div class="col-75">
+              <input type="date" name="check-in" width="20%"></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="subject">Return:  </label>
+            </div>
+            <div class="col-75">
+             <input type="date" name="check-out" width="20%"></input>
+            </div>
+          </div>
+          <div class="row">
+            <input type="submit" value="Search" id="search_hotel">
+          </div>
+          </form>
+      </div>
 </body>
     <!--Include Footer-->
     <%- include ('partials/footer.ejs'); -%>
